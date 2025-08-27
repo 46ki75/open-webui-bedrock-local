@@ -1,5 +1,8 @@
 # Open WebUI with Amazon Bedrock
 
+> [!IMPORTANT]
+> This repository has been moved to [46ki75/examples](https://github.com/46ki75/examples/tree/main/others/open-webui-bedrock-local).
+
 This is an example of running Open WebUI in a local environment.
 
 - Use LiteLLM to convert Amazon Bedrock into an API compatible with OpenAI's OpenAPI.
