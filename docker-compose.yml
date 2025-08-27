@@ -19,9 +19,16 @@ services:
     env_file:
       - .env
     volumes:
-      - ./litellm-config.yaml:/app/litellm-config.yaml:rw
-      - ~/.aws:/root/.aws:ro  
+      - ./litellm-config.yaml:/app/litellm-config.yaml:ro
+      - ~/.aws:/root/.aws:rw  
     command: ["--config", "/app/litellm-config.yaml"]
+
+  mcpo:
+    build:
+      context: ./mcpo
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
 
 volumes:
   open-webui:
