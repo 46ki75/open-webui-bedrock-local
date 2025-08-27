@@ -13,6 +13,7 @@ Create a `.env` file and set the `AWS_PROFILE`:
 
 ```
 AWS_PROFILE="examples"
+AWS_REGION="ap-northeast-1"
 ```
 
 Start with the following command:
