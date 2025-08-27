@@ -16,9 +16,8 @@ services:
     container_name: litellm
     ports:
       - "4000:4000"
-    environment:
-      AWS_PROFILE: examples 
-      AWS_REGION_NAME: ap-northeast-1
+    env_file:
+      - .env
     volumes:
       - ./config.yaml:/app/config.yaml:rw
       - ~/.aws:/root/.aws:ro  
