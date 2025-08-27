@@ -1,13 +1,13 @@
 model_list:
-  - model_name: Nova Pro
+  - model_name: Amazon Nova Pro
     litellm_params:
       model: bedrock/apac.amazon.nova-pro-v1:0
 
-  - model_name: Nova Lite
+  - model_name: Amazon Nova Lite
     litellm_params:
       model: bedrock/apac.amazon.nova-lite-v1:0
 
-  - model_name: Nova Micro
+  - model_name: Amazon Nova Micro
     litellm_params:
       model: bedrock/apac.amazon.nova-micro-v1:0
 
