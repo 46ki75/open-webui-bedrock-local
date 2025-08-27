@@ -19,9 +19,9 @@ services:
     env_file:
       - .env
     volumes:
-      - ./config.yaml:/app/config.yaml:rw
+      - ./litellm-config.yaml:/app/litellm-config.yaml:rw
       - ~/.aws:/root/.aws:ro  
-    command: ["--config", "/app/config.yaml"]
+    command: ["--config", "/app/litellm-config.yaml"]
 
 volumes:
   open-webui:
