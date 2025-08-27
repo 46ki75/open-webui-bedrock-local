@@ -1,0 +1,28 @@
+# docker-compose.yml
+version: "3.9"
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    ports:
+      - "3000:8080"
+    environment:
+      WEBUI_AUTH: "False"
+    volumes:
+      - open-webui:/app/backend/data
+
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    container_name: litellm
+    ports:
+      - "4000:4000"
+    environment:
+      AWS_PROFILE: examples 
+      AWS_REGION_NAME: ap-northeast-1
+    volumes:
+      - ./config.yaml:/app/config.yaml:rw
+      - ~/.aws:/root/.aws:ro  
+    command: ["--config", "/app/config.yaml"]
+
+volumes:
+  open-webui:
