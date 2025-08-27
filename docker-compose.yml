@@ -5,7 +5,7 @@ services:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
     ports:
-      - "3000:8080"
+      - "8080:8080"
     environment:
       WEBUI_AUTH: "False"
       OPENAI_API_BASE_URL: "http://litellm:4000"
@@ -17,8 +17,9 @@ services:
     container_name: litellm
     ports:
       - "4000:4000"
-    env_file:
-      - .env
+    environment:
+      AWS_PROFILE: examples
+      AWS_REGION: ap-northeast-1
     volumes:
       - ./litellm-config.yaml:/app/litellm-config.yaml:ro
       - ~/.aws:/root/.aws:rw
